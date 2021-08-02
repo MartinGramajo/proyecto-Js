@@ -6,6 +6,14 @@ const telefonoInput = document.getElementById('inputTel');
 const descripcionInput = document.getElementById('inputDescripcion');
 const productosTabla = document.getElementById('tabla');
 
+const editarFormProducto = document.getElementById('FormularioEditar');
+const editarNombreProducto = document.getElementById('editarNombre');
+const editarEmpresaProducto = document.getElementById('editarEmpresa');
+const editarEmailProducto = document.getElementById('editarCorreo');
+const editarTelefonoProducto = document.getElementById('editarTelefono'); 
+const editarDetalleProducto = document.getElementById('editarDetalle');
+
+
 const json = localStorage.getItem('productos');
 let productos = JSON.parse(json) || [];
 let productoID = '';
@@ -72,8 +80,41 @@ function eliminarProducto(id) {
 }
 
 
+// Funcion para cargar el modal con los datos del producto 
+function cargarModalEditar(id) {
+    const productoEncontrado = productos.find((producto) => producto.id === id);
+    editarNombreProducto.value = productoEncontrado.nombre;
+    editarEmpresaProducto.value = productoEncontrado.empresa; 
+    editarEmailProducto.value = productoEncontrado.email;
+    editarTelefonoProducto.value = productoEncontrado.telefono;
+    editarDetalleProducto.value = productoEncontrado.detalle;
+    productoID = productoEncontrado.id;
+}
 
-
+// Funcion editar Producto
+editarFormProducto.onsubmit = function editarProducto (e) {
+    e.preventDefault();
+    const productosModificados = productos.map((producto) => {
+        if (producto.id === productoID){
+            return{
+                ...producto, 
+                nombre: editarNombreProducto.value,
+                empresa: editarEmpresaProducto.value, 
+                correo: editarEmailProducto.value,
+                telefono: editarTelefonoProducto.value,
+                detalle: editarDetalleProducto.value, 
+            }
+        }
+        return producto;
+    }) 
+    const json = JSON.stringify(productosModificados);
+    localStorage.setItem('productos',json); 
+    productos = productosModificados;
+    mostrarProductos();
+    const myModal = document.getElementById('modalEditar');
+    const modal =  bootstrap.Modal.getInstance(myModal);
+    modal.hide();
+}
 
 mostrarProductos();
 

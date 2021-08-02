@@ -82,6 +82,37 @@
         </div>
         </div>
     </nav>
+    <!--Formulario Ingreso de Servicio-->
+<section>
+    <h3 class="text-center mt-1">Ingreso de productos/servicios</h3>
+        <form id="formularioAlta" class="container p-4 mt-3 border">
+            <div class="row">
+                <div class="mb-3 col-6">
+                    <label for="inputNombre" class="form-label"> <i class="fas fa-address-book"></i> Nombre</label>
+                    <input type="text" class="form-control" required id="inputNombre">
+                    </div>
+                    <div class="mb-3 col-6">
+                    <label for="inputEmpresa" class="form-label"> <i class="far fa-address-book"></i>Empresa</label>
+                    <input type="text" class="form-control" id="inputEmpresa">
+                    </div>
+                </div>
+                <div class="row">
+                <div class="mb-3 col-6">
+                <label for="inputEmail" class="form-label"> <i class="fas fa-envelope-square"></i> Email</label>
+                <input type="email" class="form-control" required id="inputEmail" aria-describedby="emailHelp">
+            </div>
+                <div class="mb-3 col-6">
+                    <label for="inputTel" class="form-label"> <i class="fas fa-phone-square-alt"></i> Telefono</label>
+                    <input type="tel" class="form-control" id="inputTel">
+                </div>
+                </div>
+                <div class="form-floating">
+                    <textarea class="form-control" id="inputDetalle" style="height: 100px"></textarea>
+                    </div>
+                <button type="submit" class="btn btn-primary mt-3">Agregar Producto</button>
+            </div>
+        </form>
+</section>
 
         <!--footer-->
         <footer class="container-fluid footer text-dark">

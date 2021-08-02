@@ -1,16 +1,16 @@
 body {
-    margin: 0;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /*Css al footer*/
 .footer {
     margin-top: auto;
-    background:#d3ebffe8;
+    background:#f8f8f8e8;
     background-color: black;
     
 }
 .social-icon {
     font-size: 3rem;
-
 }

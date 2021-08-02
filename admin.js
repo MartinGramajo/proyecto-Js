@@ -8,6 +8,7 @@ const productosTabla = document.getElementById('tabla');
 
 const json = localStorage.getItem('productos');
 let productos = JSON.parse(json) || [];
+let productoID = '';
 
 
 // Funcion generar ID del producto 
@@ -46,15 +47,34 @@ function mostrarProductos() {
                 <td>${producto.telefono}</td>
                 <td>${producto.detalle}</td>
                 <td>
-                <button  class="btn btn-primary btn-sm p-2" data-bs-toggle="modal" data-bs-target="#modalDetalle"> Mostrar Detalles</button> 
+                <button  class="btn btn-primary btn-sm p-2" data-bs-toggle="modal" data-bs-target="#modalDetalle">Push Producto</button> 
                 <button type="button" class="btn btn-success btn-sm p-2" data-bs-toggle="modal" data-bs-target="#modalEditar"> Editar </button>
-                <button class="btn btn-danger btn-sm p-2" >Eliminar nota</button>
+                <button onclick="eliminarProducto('${producto.id}')" class="btn btn-danger btn-sm p-2" >Eliminar producto</button>
                 </td>
             </tr>
         `
     })
     productosTabla.innerHTML = productosMap.join('');
 }
+
+// Funcion eliminar Producto 
+function eliminarProducto(id) {
+    const confirmar = confirm('Confirmar para eliminar el producto'); 
+    if (!confirmar) {
+        return
+    }
+    const productosLocal = JSON.parse(localStorage.getItem('productos')); 
+    const productosFiltrados = productosLocal.filter((producto) => producto.id !== id);
+    const json = JSON.stringify(productosFiltrados);
+    localStorage.setItem('productos',json); 
+    productos = productosFiltrados;
+    mostrarProductos();
+}
+
+
+
+
+
 mostrarProductos();
 
 formularioAlta.onsubmit = submitAlta;

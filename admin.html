@@ -145,46 +145,38 @@
     </section>
 
     
-                <!-- Modal editar usuario-->
-                <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Editar Producto</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                                <form id="FormularioEditar">
-                                    <div class="modal-body bg-dark">
-                                        <div class="row">
-                                            <div class="col p-4 mt-2">
-                                                <label for="editarNombre" class="form-label text-white">Nombre</label>
-                                                <input type="text" class="form-control fs-5 bg-secondary text-white" required id="editarNombre" maxlength="60">
-                                                <label for="editarEmpresa" class="form-label text-white">Empresa</label>
-                                                <input type="text" class="form-control fs-5 bg-secondary text-white" required id="editarEmpresa" maxlength="60">
-                                                <label for="editarCorreo" class="form-label text-white">Correo</label>
-                                                <input type="text" class="form-control fs-5 bg-secondary text-white" required id="editarCorreo" maxlength="60">
-                                                <label for="editarTelefono" class="form-label text-white">Telefono</label>
-                                                <input type="text" class="form-control fs-5 bg-secondary text-white" required id="editarTelefono" maxlength="60">
-                                            </div>
-                                        <div  class="modal-body p-4">
-                                            <div class="form-floating">
-                                                <h2 class="text-white text-center">Detalles del producto</h2>
-                                                <input type="text" class="form-control overflow-auto fs-5 bg-secondary text-white p-1"  required id="editarDetalle" maxlength="600">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button class="btn btn-primary" type="submit">Enviar</button>
-                                        <button type="button" class="btn btn-secondary" 
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                    </div>
-                                </form>
-                        </div>
-                    </div>
-                </div>
-
-
+<!-- Modal Editar Producto -->
+<div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Editar usuario</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="formularioEditar">
+            <div class="modal-body">
+                <label for="editarNombre" class="form-label"> <i class="fas fa-address-book"></i> Nombre</label>
+                <input type="text" class="form-control"  id="editarNombre">
+                <br>
+                <label for="editarEmpresa" class="form-label"> <i class="far fa-address-book"></i> Empresa</label>
+                <input type="text" class="form-control" id="editarEmpresa">
+                <br>
+                <label for="editarEmail" class="form-label"> <i class="fas fa-envelope-square"></i> Email</label>
+                <input type="email" class="form-control"  id="editarEmail" aria-describedby="emailHelp">
+                <br>
+                <label for="editarTel" class="form-label"> <i class="fas fa-phone-square-alt"></i> Telefono</label>
+                <input type="tel" class="form-control" id="editarTel">
+                <br>
+                <textarea type="text" class="form-control overflow-auto text-dark p-1" id="editarDescripcion" maxlength="300"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="submit">Enviar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+            </form>
+        </div>
+        </div>
+</div>
 
 
         <!--footer-->

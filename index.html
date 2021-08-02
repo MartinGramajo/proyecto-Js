@@ -120,17 +120,17 @@
     <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                        <div class="login-form">
+                        <div id="Formulario" class="login-form" >
                             <form action="/examples/actions/confirmation.php" method="post">
                                 <h2 class="text-center">Log in</h2>       
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Username" required="required">
+                                    <input id="inputUser" type="text" class="form-control" placeholder="Username" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password" required="required">
+                                    <input id="inputPass"  type="password" class="form-control" placeholder="Password" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                                    <button type="submit" class="btn btn-primary btn-block">Enviar</button>
                                 </div>
                                 <div class="clearfix">
                                     <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
@@ -175,6 +175,7 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"
     ></script>
+    <script src="./login.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

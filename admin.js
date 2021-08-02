@@ -6,17 +6,16 @@ const telefonoInput = document.getElementById('inputTel');
 const descripcionInput = document.getElementById('inputDescripcion');
 const productosTabla = document.getElementById('tabla');
 
-const editarFormProducto = document.getElementById('FormularioEditar');
-const editarNombreProducto = document.getElementById('editarNombre');
-const editarEmpresaProducto = document.getElementById('editarEmpresa');
-const editarEmailProducto = document.getElementById('editarCorreo');
-const editarTelefonoProducto = document.getElementById('editarTelefono'); 
-const editarDetalleProducto = document.getElementById('editarDetalle');
-
+const editarForm = document.getElementById('formularioEditar'); 
+const editarNombreInput = document.getElementById('editarNombre');
+const editarEmpresaInput = document.getElementById('editarEmpresa');
+const editarEmailInput = document.getElementById('editarEmail');
+const editarTelefonoInput = document.getElementById('editarTel'); 
+const editarDescripcionInput = document.getElementById('editarDescripcion');
 
 const json = localStorage.getItem('productos');
 let productos = JSON.parse(json) || [];
-let productoID = '';
+let productoId = '';
 
 
 // Funcion generar ID del producto 
@@ -56,7 +55,7 @@ function mostrarProductos() {
                 <td>${producto.detalle}</td>
                 <td>
                 <button  class="btn btn-primary btn-sm p-2" data-bs-toggle="modal" data-bs-target="#modalDetalle">Push Producto</button> 
-                <button type="button" class="btn btn-success btn-sm p-2" data-bs-toggle="modal" data-bs-target="#modalEditar"> Editar </button>
+                <button onclick="cargarModalEditar('${producto.id}')" type="button" class="btn btn-success btn-sm p-2" data-bs-toggle="modal" data-bs-target="#modalEditar"> Editar </button>
                 <button onclick="eliminarProducto('${producto.id}')" class="btn btn-danger btn-sm p-2" >Eliminar producto</button>
                 </td>
             </tr>
@@ -79,43 +78,44 @@ function eliminarProducto(id) {
     mostrarProductos();
 }
 
-
-// Funcion para cargar el modal con los datos del producto 
-function cargarModalEditar(id) {
-    const productoEncontrado = productos.find((producto) => producto.id === id);
-    editarNombreProducto.value = productoEncontrado.nombre;
-    editarEmpresaProducto.value = productoEncontrado.empresa; 
-    editarEmailProducto.value = productoEncontrado.email;
-    editarTelefonoProducto.value = productoEncontrado.telefono;
-    editarDetalleProducto.value = productoEncontrado.detalle;
-    productoID = productoEncontrado.id;
+function cargarModalEditar (id) {
+    const productoEncontrado = productos.find((producto) => producto.id === id); 
+    editarNombreInput.value = productoEncontrado.nombre; 
+    editarEmpresaInput.value = productoEncontrado.empresa; 
+    editarEmailInput.value = productoEncontrado.email; 
+    editarTelefonoInput.value = productoEncontrado.telefono;
+    editarDescripcionInput.value = productoEncontrado.detalle;
+    productoId = productoEncontrado.id;
 }
 
-// Funcion editar Producto
-editarFormProducto.onsubmit = function editarProducto (e) {
-    e.preventDefault();
+function editarProducto(e) {
+    e.preventDefault(); 
     const productosModificados = productos.map((producto) => {
-        if (producto.id === productoID){
-            return{
+        if (producto.id === productoId) {
+            const productoModificado = {
                 ...producto, 
-                nombre: editarNombreProducto.value,
-                empresa: editarEmpresaProducto.value, 
-                correo: editarEmailProducto.value,
-                telefono: editarTelefonoProducto.value,
-                detalle: editarDetalleProducto.value, 
-            }
+                nombre: editarNombreInput.value, 
+                empresa: editarEmpresaInput.value, 
+                email: editarEmailInput.value, 
+                telefono: editarTelefonoInput.value, 
+                detalle: editarDescripcionInput.value,  
+            };
+            return productoModificado; 
+        } else {
+            return producto; 
         }
-        return producto;
-    }) 
+    })
     const json = JSON.stringify(productosModificados);
-    localStorage.setItem('productos',json); 
+    localStorage.setItem('productos', json);
     productos = productosModificados;
-    mostrarProductos();
-    const myModal = document.getElementById('modalEditar');
-    const modal =  bootstrap.Modal.getInstance(myModal);
-    modal.hide();
+    console.log('Se modificó exitosamente un usuario. 👨‍💻');
+    mostrarProductos(); 
+    const modalDiv = document.getElementById('modalEditar');
+    const modalBootstrap = bootstrap.Modal.getInstance(modalDiv);
+    modalBootstrap.hide();
 }
 
 mostrarProductos();
-
 formularioAlta.onsubmit = submitAlta;
+editarForm.onsubmit = editarProducto;
+

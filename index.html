@@ -75,15 +75,10 @@
             </li>
             </ul>
             <form class="d-flex">
-            <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-                Search
-            </button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                    Login
+                </button> 
             </form>
         </div>
         </div>
@@ -91,6 +86,7 @@
 
     <!--secciones para el usuario (servicios categorias etc)-->
     <section>
+        <h3 class="text-center">productos</h3>
         <div class="card-group">
             <div class="card">
                 <img src="..." class="card-img-top" alt="...">
@@ -118,6 +114,26 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+<section>
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+</section>
 
     <!--footer-->
     <footer class="container-fluid footer text-dark">

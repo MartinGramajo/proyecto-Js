@@ -4,6 +4,7 @@ const empresaInput = document.getElementById('inputEmpresa');
 const emailInputProducto = document.getElementById('inputEmail');
 const telefonoInput = document.getElementById('inputTel');
 const descripcionInput = document.getElementById('inputDescripcion');
+const selectorInput = document.getElementById('formImagen');
 const productosTabla = document.getElementById('tabla');
 
 const editarForm = document.getElementById('formularioEditar'); 
@@ -35,6 +36,7 @@ const submitAlta = (e) => {
         email:emailInputProducto.value,
         telefono:telefonoInput.value,
         detalle:descripcionInput.value,
+        imagen: selectorInput.value,
         registro: Date.now(),
     };
     productos.push(producto);
@@ -55,6 +57,7 @@ function mostrarProductos() {
                 <td>${producto.empresa}</td>
                 <td>${producto.telefono}</td>
                 <td>${producto.detalle}</td>
+                <td>${producto.imagen}</td>
                 <td>
                 <button  class="btn btn-success btn-sm p-2">Push Producto</button> 
                 <button onclick="mostrarDetalle('${producto.id}')" type="button" class="btn btn-info btn-sm text-white" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalle</button>
@@ -79,6 +82,7 @@ function mostrarDetalle(id) {
     <li>email: ${productoEncontrado.email}</li>
     <li>telefono: ${productoEncontrado.telefono}</li>
     <li>detalles: ${productoEncontrado.detalle}</li>
+    <li>imagen: ${productoEncontrado.imagen}</li>
     <li>Fecha de registro: ${fecha.toLocaleString()}</li>
     </ul>
     `

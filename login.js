@@ -3,7 +3,7 @@ const userInput = document.getElementById('inputUser');
 const passInput = document.getElementById('inputPass'); 
 
 const admin = {
-    username : 'admin@admin', 
+    username : 'admin', 
     pass: 'admin',
     nombre: 'Admin'
 }; 

@@ -153,8 +153,22 @@ const submitBusqueda = (e) => {
     });
         productos = productosFiltrados; 
         mostrarProductos();
+        const alerta = document.getElementById('alertaBusqueda');
+        if (productosFiltrados.length === 0) {
+            alerta.classList.remove('d-none'); 
+        } else {
+            alerta.classList.add('d-none');
+        }
 }
 
+//funcion para limpiar el historial de busqueda. 
+const limpiarFiltro = () => {
+    productos = JSON.parse(localStorage.getItem('productos')) || []; 
+    busquedaForm.reset(); 
+    mostrarProductos();
+    const alerta = document.getElementById('alertaBusqueda'); 
+    alerta.classList.add('d-none')
+}
 
 mostrarProductos();
 formularioAlta.onsubmit = submitAlta;

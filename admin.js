@@ -13,6 +13,8 @@ const editarEmailInput = document.getElementById('editarEmail');
 const editarTelefonoInput = document.getElementById('editarTel'); 
 const editarDescripcionInput = document.getElementById('editarDescripcion');
 
+const busquedaForm = document.getElementById('formBusqueda');
+
 const json = localStorage.getItem('productos');
 let productos = JSON.parse(json) || [];
 let productoId = '';
@@ -136,9 +138,26 @@ function editarProducto(e) {
     modalBootstrap.hide();
 }
 
+//funcion  busqueda producto 
+const submitBusqueda = (e) => {
+    e.preventDefault();
+    const productosLocal = JSON.parse(localStorage.getItem('productos') || []); 
+    const busquedaInput = document.getElementById('busqueda'); 
+    const termino = busquedaInput.value.toLowerCase(); 
+    const productosFiltrados = productosLocal.filter((producto) => {
+        const nombreEnMinuscula = producto.nombre.toLowerCase();
+        const empresaEnMinuscula = producto.empresa.toLowerCase();
+        const emailEnMinuscula = producto.email.toLowerCase(); 
+        const detallesEnMinuscula = producto.detalle.toLowerCase(); 
+        return nombreEnMinuscula.includes(termino) || empresaEnMinuscula.includes(termino) || emailEnMinuscula.includes(termino) || detallesEnMinuscula.includes(termino);
+    });
+        productos = productosFiltrados; 
+        mostrarProductos();
+}
 
 
 mostrarProductos();
 formularioAlta.onsubmit = submitAlta;
 editarForm.onsubmit = editarProducto;
+busquedaForm.onsubmit = submitBusqueda;
 

@@ -32,9 +32,9 @@ const submitAlta = (e) => {
         empresa:empresaInput.value,
         email:emailInputProducto.value,
         telefono:telefonoInput.value,
-        detalle:descripcionInput.value
+        detalle:descripcionInput.value,
+        registro: Date.now(),
     };
-    console.log("file: admin.js ~ line 29 ~ submitAlta ~ producto ", producto )
     productos.push(producto);
     const json = JSON.stringify(productos);
     localStorage.setItem('productos',json); 
@@ -54,8 +54,9 @@ function mostrarProductos() {
                 <td>${producto.telefono}</td>
                 <td>${producto.detalle}</td>
                 <td>
-                <button  class="btn btn-primary btn-sm p-2" data-bs-toggle="modal" data-bs-target="#modalDetalle">Push Producto</button> 
-                <button onclick="cargarModalEditar('${producto.id}')" type="button" class="btn btn-success btn-sm p-2" data-bs-toggle="modal" data-bs-target="#modalEditar"> Editar </button>
+                <button  class="btn btn-success btn-sm p-2">Push Producto</button> 
+                <button onclick="mostrarDetalle('${producto.id}')" type="button" class="btn btn-info btn-sm text-white" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalle</button>
+                <button onclick="cargarModalEditar('${producto.id}')" type="button" class=" text-white btn btn-warning btn-sm p-2" data-bs-toggle="modal" data-bs-target="#modalEditar"> Editar </button>
                 <button onclick="eliminarProducto('${producto.id}')" class="btn btn-danger btn-sm p-2" >Eliminar producto</button>
                 </td>
             </tr>
@@ -64,7 +65,25 @@ function mostrarProductos() {
     productosTabla.innerHTML = productosMap.join('');
 }
 
-// Funcion eliminar Producto 
+// funcion para mostrar detalle. 
+function mostrarDetalle(id) {
+    const productoEncontrado = productos.find((producto) => producto.id === id); 
+    const detallesDiv = document.getElementById('detalleProducto');
+    const fecha = new Date(productoEncontrado.registro);
+    const detallesProducto = `
+    <ul>
+    <li>Nombre: ${productoEncontrado.nombre}</li>
+    <li>empresa: ${productoEncontrado.empresa}</li>
+    <li>email: ${productoEncontrado.email}</li>
+    <li>telefono: ${productoEncontrado.telefono}</li>
+    <li>detalles: ${productoEncontrado.detalle}</li>
+    <li>Fecha de registro: ${fecha.toLocaleString()}</li>
+    </ul>
+    `
+    detallesDiv.innerHTML = detallesProducto;
+}
+
+// Funcion eliminar Producto. 
 function eliminarProducto(id) {
     const confirmar = confirm('Confirmar para eliminar el producto'); 
     if (!confirmar) {
@@ -78,6 +97,7 @@ function eliminarProducto(id) {
     mostrarProductos();
 }
 
+// funcion para precargar el modal con los datos previamente ingresado del producto. 
 function cargarModalEditar (id) {
     const productoEncontrado = productos.find((producto) => producto.id === id); 
     editarNombreInput.value = productoEncontrado.nombre; 
@@ -88,6 +108,7 @@ function cargarModalEditar (id) {
     productoId = productoEncontrado.id;
 }
 
+// funcion para editar el producto. 
 function editarProducto(e) {
     e.preventDefault(); 
     const productosModificados = productos.map((producto) => {
@@ -114,6 +135,8 @@ function editarProducto(e) {
     const modalBootstrap = bootstrap.Modal.getInstance(modalDiv);
     modalBootstrap.hide();
 }
+
+
 
 mostrarProductos();
 formularioAlta.onsubmit = submitAlta;

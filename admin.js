@@ -76,15 +76,13 @@ function mostrarDetalle(id) {
     const detallesDiv = document.getElementById('detalleProducto');
     const fecha = new Date(productoEncontrado.registro);
     const detallesProducto = `
-    <ul>
-    <li>Nombre: ${productoEncontrado.nombre}</li>
-    <li>empresa: ${productoEncontrado.empresa}</li>
-    <li>email: ${productoEncontrado.email}</li>
-    <li>telefono: ${productoEncontrado.telefono}</li>
-    <li>detalles: ${productoEncontrado.detalle}</li>
-    <li>imagen: ${productoEncontrado.imagen}</li>
-    <li>Fecha de registro: ${fecha.toLocaleString()}</li>
-    </ul>
+    <p>Nombre: ${productoEncontrado.nombre}</p>
+    <p>empresa: ${productoEncontrado.empresa}</p>
+    <p>email: ${productoEncontrado.email}</p>
+    <p>telefono: ${productoEncontrado.telefono}</p>
+    <p>detalles: ${productoEncontrado.detalle}</p>
+    <p>imagen de la empresa: <img style="max-width: fit-content;" src="${productoEncontrado.imagen}" alt=""></p>
+    <p>Fecha de registro: ${fecha.toLocaleString()}</p>
     `
     detallesDiv.innerHTML = detallesProducto;
 }

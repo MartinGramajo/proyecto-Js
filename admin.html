@@ -39,7 +39,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="#index.html">Inicio</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
@@ -106,6 +106,10 @@
                     <label for="inputTel" class="form-label"> <i class="fas fa-phone-square-alt"></i> Telefono</label>
                     <input type="tel" class="form-control" id="inputTel">
                 </div>
+                <div class="mb-3 col-6">
+                    <label for="formImagen" class="form-label"> <i class="far fa-image"></i> Imagen del producto</label>
+                    <input class="form-control" type="file" id="formImagen">
+                </div>
                 </div>
                         <div class="form-floating">
                             <textarea type="text" class="form-control overflow-auto text-dark p-1" id="inputDescripcion" maxlength="300"></textarea>
@@ -126,6 +130,7 @@
                     <th scope="col">Empresa</th>
                     <th scope="col">Telefono</th>
                     <th scope="col">Descripcion</th>
+                    <th scope="col">Imagen</th>
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
@@ -178,6 +183,11 @@
                 <br>
                 <label for="editarTel" class="form-label"> <i class="fas fa-phone-square-alt"></i> Telefono</label>
                 <input type="tel" class="form-control" id="editarTel">
+                <br>
+                <div class="mb-3 col-6">
+                    <label for="formImagen" class="form-label"> <i class="far fa-image"></i> Imagen del producto</label>
+                    <input class="form-control" type="file" id="formImagen">
+                </div>
                 <br>
                 <textarea type="text" class="form-control overflow-auto text-dark p-1" id="editarDescripcion" maxlength="300"></textarea>
             </div>

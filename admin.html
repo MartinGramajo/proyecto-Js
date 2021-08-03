@@ -76,13 +76,13 @@
             </ul>
                 <form class="d-flex" id="formBusqueda">
                     <input class="form-control me-2" type="search" placeholder="Buscar Producto" aria-label="Search" id="busqueda">
-                    <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
-                    <!-- <button  type="button" onclick="limpiarFiltro()">limpiar</button> -->
+                    <button class="btn btn-outline-success me-2" type="submit"><i class="fas fa-search"></i></button>
+                    <button class="btn btn-outline-danger me-2"  type="button" onclick="limpiarFiltro()"><i class="fas fa-undo"></i></button> 
                 </form>
-            
-        </div>
+            </div>
         </div>
     </nav>
+
     <!--Formulario Ingreso de Servicio-->
 <section>
     <h3 class="text-center mt-1">Ingreso de productos/servicios</h3>
@@ -129,21 +129,13 @@
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
-        <tbody id="tabla">
-            <!-- <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>
-                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                data-bs-target="#modalDetalle">Ver detalle</button>
-                <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
-                data-bs-target="#modalEditar">Editar</button>
-                <button onclick="eliminarUsuario()" class="btn btn-danger btn-sm">Eliminar</button>
-            </td>
-            </tr> -->
-        </tbody>
+            <tbody id="tabla">
+                
+            </tbody>
         </table>
+        <div id="alertaBusqueda" class="text-center bg-info d-none">
+            <p>No hay resultados para la busqueda</p>
+        </div>
     </section>
 
 <!-- Modal Detalle Producto -->

@@ -2,12 +2,16 @@ const formularioForm = document.getElementById('Formulario');
 const userInput = document.getElementById('inputUser'); 
 const passInput = document.getElementById('inputPass'); 
 
+const tablaUsuario = document.getElementById('tablaUser');
+
+
 const admin = {
     username : 'admin', 
     pass: 'admin',
     nombre: 'Admin'
 }; 
 
+/*Logueo del admin*/ 
 formularioForm.onsubmit = (e) => {
     e.preventDefault(); 
     const coincideUsername = admin.username === userInput.value; 
@@ -19,3 +23,6 @@ formularioForm.onsubmit = (e) => {
         alert('datos incorretos')
     }
 } 
+
+
+

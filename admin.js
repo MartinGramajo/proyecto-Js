@@ -16,6 +16,8 @@ const editarDescripcionInput = document.getElementById('editarDescripcion');
 
 const busquedaForm = document.getElementById('formBusqueda');
 
+const productoPaginaPrincipal = document.getElementById('agregarProducto'); 
+
 const json = localStorage.getItem('productos');
 let productos = JSON.parse(json) || [];
 let productoId = '';
@@ -171,6 +173,7 @@ const limpiarFiltro = () => {
     const alerta = document.getElementById('alertaBusqueda'); 
     alerta.classList.add('d-none')
 }
+
 
 mostrarProductos();
 formularioAlta.onsubmit = submitAlta;

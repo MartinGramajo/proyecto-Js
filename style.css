@@ -35,6 +35,11 @@ img{
 div [class^="col-"]{
     padding-left:5px;
     padding-right:5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    width: 18rem;
+
 }
 .card{
     transition:0.5s;

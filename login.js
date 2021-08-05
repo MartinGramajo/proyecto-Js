@@ -1,9 +1,11 @@
 const formularioForm = document.getElementById('Formulario');
 const userInput = document.getElementById('inputUser'); 
 const passInput = document.getElementById('inputPass'); 
-
 const tablaUsuario = document.getElementById('tablaUser');
+const cardProducto = document.getElementById('mostrarElemento');
 
+const json = localStorage.getItem('productos');
+let productos = JSON.parse(json) || [];
 
 const admin = {
     username : 'admin', 
@@ -26,3 +28,22 @@ formularioForm.onsubmit = (e) => {
 
 
 
+function mostrarProducto() {
+    const productosMap = productos.map(function (producto) {
+        return `
+        <div class="col-4 col-md-3 col-sm-6">
+            <div class="card">
+                <img src="${producto.imagen}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${producto.nombre}</h5>
+                    <p class="card-text">${producto.detalle}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div> 
+        `
+    })
+    cardProducto.innerHTML = productosMap.join('');
+}
+
+mostrarProducto();

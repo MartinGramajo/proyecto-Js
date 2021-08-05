@@ -49,7 +49,6 @@ const submitAlta = (e) => {
 };
 
 //Funcion listar productos
-
 function mostrarProductos() {
     const productosMap = productos.map(function (producto) {
         return `

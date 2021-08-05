@@ -61,7 +61,7 @@ function mostrarProductos() {
                 <td>${producto.detalle}</td>
                 <td>${producto.imagen}</td>
                 <td>
-                <button  class="btn btn-success btn-sm p-2">Push Producto</button> 
+                <button class="btn btn-success btn-sm p-2">Push Producto</button> 
                 <button onclick="mostrarDetalle('${producto.id}')" type="button" class="btn btn-info btn-sm text-white" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalle</button>
                 <button onclick="cargarModalEditar('${producto.id}')" type="button" class=" text-white btn btn-warning btn-sm p-2" data-bs-toggle="modal" data-bs-target="#modalEditar"> Editar </button>
                 <button onclick="eliminarProducto('${producto.id}')" class="btn btn-danger btn-sm p-2" >Eliminar producto</button>
@@ -174,6 +174,10 @@ const limpiarFiltro = () => {
     alerta.classList.add('d-none')
 }
 
+//funcion para mostrar producto en principal
+function mostrarEnPrincipal() {
+    
+}
 
 mostrarProductos();
 formularioAlta.onsubmit = submitAlta;

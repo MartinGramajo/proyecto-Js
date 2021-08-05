@@ -60,10 +60,10 @@ function mostrarProductos() {
                 <td>${producto.detalle}</td>
                 <td>${producto.imagen}</td>
                 <td>
-                <button class="btn btn-success btn-sm p-2">Push Producto</button> 
-                <button onclick="mostrarDetalle('${producto.id}')" type="button" class="btn btn-info btn-sm text-white" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalle</button>
-                <button onclick="cargarModalEditar('${producto.id}')" type="button" class=" text-white btn btn-warning btn-sm p-2" data-bs-toggle="modal" data-bs-target="#modalEditar"> Editar </button>
-                <button onclick="eliminarProducto('${producto.id}')" class="btn btn-danger btn-sm p-2" >Eliminar producto</button>
+                <button class="btn btn-success btn-sm p-1"><i class="fas fa-user-minus"></i></button> 
+                <button onclick="mostrarDetalle('${producto.id}')" type="button" class="btn btn-info btn-sm text-white p-2" data-bs-toggle="modal" data-bs-target="#modalDetalle"><i class="fas fa-info"></i></button>
+                <button onclick="cargarModalEditar('${producto.id}')" type="button" class=" text-white btn btn-warning btn-sm p-2" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="far fa-edit"></i></button>
+                <button onclick="eliminarProducto('${producto.id}')" class="btn btn-danger btn-sm p-2" ><i class="fas fa-trash-alt"></i></button>
                 </td>
             </tr>
         `

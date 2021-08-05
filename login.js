@@ -31,7 +31,7 @@ formularioForm.onsubmit = (e) => {
 function mostrarProducto() {
     const productosMap = productos.map(function (producto) {
         return `
-        <div class="col-4 col-md-3 col-sm-6">
+        <div class="col-md-3 col-sm-6">
             <div class="card">
                 <img src="${producto.imagen}" class="card-img-top" alt="...">
                 <div class="card-body">

@@ -1,3 +1,11 @@
+:root {
+    --color1: #F48A3B;
+    --color2: #515C6F;
+    --color3: #999999;
+    --color4: #F5F6F8;
+    font-family: 'Roboto', sans-serif;
+}
+
 body {
     min-height: 100vh;
     display: flex;
@@ -94,11 +102,11 @@ div [class^="col-"]{
 /*Css al footer*/
 .footer {
     margin-top: auto;
-    background:#f8f8f8e8;
-    background-color: rgba(111, 111, 114, 0.144);
-    
+    background-color:var(--color2);
 }
 .social-icon {
     font-size: 3rem;
 }
-
+footer div{
+    color:var(--color4)
+}

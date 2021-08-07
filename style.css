@@ -110,3 +110,8 @@ div [class^="col-"]{
 footer div{
     color:var(--color4)
 }
+#copyrightText{
+    color: var(--color2);
+    background-color: var(--color3)
+}
+

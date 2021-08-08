@@ -35,10 +35,10 @@ body {
     font-weight: bold;
 }
 /*Css aplicado a las cards */
-img{
-    height:150px;
-    width:100%;
-}
+/* img{ */
+    /* height:150px; */
+    /* width:100%; */
+/* } */
 
 div [class^="col-"]{
     padding-left:5px;
@@ -115,3 +115,28 @@ footer div{
     background-color: var(--color3)
 }
 
+/* logo navbar */
+#logoNav{
+    width: 160px;
+    height: 47px;
+}
+
+/* textos */
+#texto1Home{
+    margin-top: 35px;
+    margin-bottom: 35px;
+    color: var(--color2)
+}
+
+/* imgfondo */
+#conteinerFondo{
+    display: flex;
+    justify-content: center
+}
+
+#conteinerCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center
+    
+}

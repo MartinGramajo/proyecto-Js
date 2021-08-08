@@ -36,50 +36,122 @@
     <!--navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-        <a class="navbar-brand" href="#"></a>
-        <button
+            <div style="padding-left: 20px;">
+                <a class="navbar-brand" href="./index.html">
+                <img src="/img/logo.png" alt="GranTrabajo-Logo" id="logoNav">
+                </a>
+            </div>
+            <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-        >
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./index.html">Incio</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="./registro.html">Registro usuario</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sobre nosotros</a>
-                </li>
-            </ul>
-            <form class="d-flex">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLogin">
-                    Login
-                </button> 
-            </form>
-        </div>
+            </button>
+            <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
+                
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                    <a class="nav-link" href="./registro.html">Registrate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <form class="d-flex mr-auto">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                            Login
+                        </button> 
+                    </form>
+                </ul>
+            </div>
         </div>
     </nav>
 
+    <!-- barra de busqueda -->
+    <div class="container">
+        <div class="row">
+            <div id="conteinerFondo">
+                <img src="/img/trabajadores-Fondo.jpg" 
+                style="max-width: 100vh; align-items: center">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row"></div>
+            <form class="d-grid col-lg-3 col-md-4 col-sm-6 col-xs-12 mx-auto">
+                <input class="form-control me-2" type="search" placeholder="">
+                <button class="btn btn-outline-success" type="submit">¡Buscar!</button>
+            </form>
+            </div>  
+        </div>    
     <!-- secciones para el usuario (servicios categorias etc) -->
-    <section class="container">
-            <h3 class="text-center">servicios</h3>
-                    <div id="mostrarElemento" class="container mt-2 d-flex flex-wrap justify-content-lg-between">
-                        <div class="row">
-                    </div> 
+    <h3 class="text-center" id="texto1Home">¿Qué categoría estás buscando?</h3>
+    <section class="container" id="conteinerCards">
+            
+                <div class="card rounded" style="width: 18rem; height: 16rem; border: none;">
+                    <img src="/img/abogado.jpg" class="card-img-top" style="padding-left: 10px; padding-right: 10px;" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Abogado <i class="fas fa-arrow-right" style="color: #F48A3B;"></i></i></p>
+                        </div>
                 </div>
+                <div class="card rounded" style="width: 18rem; height: 16rem; border: none;">
+                    <img src="/img/medico.jpg" class="card-img-top" style="padding-left: 10px; padding-right: 10px;" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Médico <i class="fas fa-arrow-right" style="color: #F48A3B;"></i></i></p>
+                        </div>
+                </div>
+                <div class="card rounded" style="width: 18rem; height: 16rem; border: none;">
+                    <img src="/img/psicologo.jpg" class="card-img-top" style="padding-left: 10px; padding-right: 10px;" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Psicólogo <i class="fas fa-arrow-right" style="color: #F48A3B;"></i></i></p>
+                        </div>
+                </div>
+                <div class="card rounded" style="width: 18rem; height: 16rem; border: none;">
+                    <img src="/img/profesor.jpg" class="card-img-top" style="padding-left: 10px; padding-right: 10px;" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Profesor <i class="fas fa-arrow-right" style="color: #F48A3B;"></i></i></p>
+                        </div>
+                </div>
+                <div class="card rounded" style="width: 18rem; height: 16rem; border: none;">
+                    <img src="/img/enfermero.jpg" class="card-img-top" style="padding-left: 10px; padding-right: 10px;" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Enfermero <i class="fas fa-arrow-right" style="color: #F48A3B;"></i></i></p>
+                        </div>
+                </div>
+                <div class="card rounded" style="width: 18rem; height: 16rem; border: none;">
+                    <img src="/img/carpintero.jpg" class="card-img-top" style="padding-left: 10px; padding-right: 10px;" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Carpintero <i class="fas fa-arrow-right" style="color: #F48A3B;"></i></i></p>
+                        </div>
+                </div>
+                <div class="card rounded" style="width: 18rem; height: 16rem; border: none;">
+                    <img src="/img/mecanico.jpg" class="card-img-top" style="padding-left: 10px; padding-right: 10px;" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Mecánico <i class="fas fa-arrow-right" style="color: #F48A3B;"></i></i></p>
+                        </div>
+                </div>
+                <div class="card rounded" style="width: 18rem; height: 16rem; border: none;">
+                    <img src="/img/albañil.jpg" class="card-img-top" style="padding-left: 10px; padding-right: 10px;" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Albañil <i class="fas fa-arrow-right" style="color: #F48A3B;"></i></i></p>
+                        </div>
+                </div>
+                <div class="card rounded" style="width: 18rem; height: 16rem; border: none;">
+                    <img src="/img/diseñadoor.jpg" class="card-img-top" style="padding-left: 10px; padding-right: 10px;" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Diseñador <i class="fas fa-arrow-right" style="color: #F48A3B;"></i></i></p>
+                        </div>
+                </div>
+                
     </section>
-
-
+    <h3 class="text-center" id="texto1Home">Ver +</h3>
     <!-- Modal -->
 <section>
     <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -106,34 +178,6 @@
             </div>
         </div>
 </section>
-
-        <!-- Section: Social media -->
-            <section
-            class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-            >
-            <!-- Left -->
-            <div class="me-5 d-none d-lg-block">
-                <span>Puedes ponerte en contacto a travez de nuestras redes!:</span>
-            </div>
-            <!-- Left -->
-            <!-- Right -->
-            <div>
-                <a href="" class="me-4 text-reset">
-                <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                <i class="fab fa-twitter"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                <i class="fab fa-google"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-            <!-- Right -->
-            </section>
-            <!-- Section: Social media -->
         <!-- Footer -->
 <footer class="footer text-center text-lg-start bg-light text-muted" id="footer1">   
         <!-- Section: Links  -->
@@ -183,13 +227,27 @@
                 <h6 class="text-uppercase fw-bold mb-4">
                 Contacto
                 </h6>
+                <div>
+                    <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <p></p>
                 <p><i class="fas fa-home me-3"></i>Calle Falsa 123</p>
                 <p>
                 <p>SMT - Tucumán - Argentina</p>
                 <i class="fas fa-envelope me-3"></i>
                 info@grantrabajo.com
                 </p>
-                <p><i class="fas fa-phone me-3"></i> + 381 456 7890</p>
             </div>
             <!-- Grid column -->
             </div>
@@ -200,7 +258,7 @@
     
         <!-- Copyright -->
         <div class="text-center p-4" id="copyrightText">
-        © 2021 Copyright:
+        © 2021 Todos los Derechos Reservados:
         <a class="text-reset fw-bold" href=#>HatMagicStudio</a>
         </div>
         <!-- Copyright -->
